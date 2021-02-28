@@ -118,7 +118,14 @@ class Transfers24
 
         $response_table = [];
         parse_str($this->http_response->getBody(), $response_table);
-
+        if (array_key_first($response_table) == "errorMessage"){
+            parse_str(str_replace("errorMessage=",'',$this->http_response->getBody()),
+                $response_table);
+            foreach (array_keys($response_table) as $array_key){
+                $this->segmentToDescription($array_key);
+            }
+            return;
+        }
         foreach ($response_table as $label => $segment) {
             switch ($label) {
                 case self::ERROR_LABEL:
@@ -158,8 +165,10 @@ class Transfers24
         if(count($transform_error_segment) > 1)
         {
             $this->error_message[$transform_error_segment[0]] = $transform_error_segment[1];
+        } else {
+            $this->error_message[] = $segment;
         }
-        $this->error_message[] = $segment;
+
     }
 
     /**

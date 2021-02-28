@@ -5,9 +5,9 @@ namespace Tests\Services;
 use Tests\UnitTestCase;
 use Devpark\Transfers24\Services\Amount;
 
-class CountryTest extends UnitTestCase
+class AmountTest extends UnitTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

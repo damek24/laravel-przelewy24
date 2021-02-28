@@ -7,7 +7,7 @@ use Devpark\Transfers24\Exceptions\CurrencyException;
 
 class CurrencyTest extends UnitTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
     }

@@ -19,6 +19,9 @@ class Amount
         if (mb_strpos($amount, ',') != false) {
             $amount = str_replace([','], ['.'], $amount);
         }
+        if (!is_numeric($amount)){
+            $amount = 0;
+        }
 
         $amount = number_format(round($amount, 2), 2);
         $amount = str_replace(['.', ','], ['', ''], $amount);

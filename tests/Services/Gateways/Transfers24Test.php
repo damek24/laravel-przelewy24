@@ -11,10 +11,11 @@ use GuzzleHttp\Client;
 
 class Transfers24Test extends UnitTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->config = m::mock(Config::class)->makePartial();
+        $this->config['local'] = true;
         $this->response = m::mock(Response::class)->makePartial();
         $this->gateway = new GatewayTransfers24($this->config, $this->response);
     }
@@ -178,7 +179,10 @@ class Transfers24Test extends UnitTestCase
         $this->gateway_property->setAccessible(true);
         $this->gateway_property->setValue($this->gateway, $this->response);
 
-        $this->client = new Client(['base_uri' => 'https://sandbox.przelewy24.pl/']);
+        $this->client = new Client([
+            'base_uri' => 'https://sandbox.przelewy24.pl/',
+            'curl' => [CURLOPT_SSL_VERIFYPEER => false]
+        ]);
         $this->gateway_property = $this->reflection->getProperty('client');
         $this->gateway_property->setAccessible(true);
         $this->gateway_property->setValue($this->gateway, $this->client);

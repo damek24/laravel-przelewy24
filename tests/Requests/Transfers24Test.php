@@ -17,7 +17,12 @@ use Illuminate\Config\Repository as Config;
 
 class Transfers24Test extends UnitTestCase
 {
-    protected function setUp()
+    /**
+     * @var m\Mock
+     */
+    private $request_test;
+
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -351,8 +356,8 @@ class Transfers24Test extends UnitTestCase
         $url_status = $this->request_concrete->getField('url_status');
         $url_return = $this->request_concrete->getField('url_return');
 
-        $this->assertEquals($url_status, 'http://:');
-        $this->assertEquals($url_return, 'http://:');
+        $this->assertEquals($url_status, 'http://localhost');
+        $this->assertEquals($url_return, 'http://localhost');
     }
 
     /** @test */
@@ -476,7 +481,6 @@ class Transfers24Test extends UnitTestCase
             'p24_name_1' => $this->request_concrete->getField('article_name'),
             'p24_description_1' => $this->request_concrete->getField('article_description'),
             'p24_quantity_1' => $this->request_concrete->getField('article_quantity'),
-            'p24_price_1' => $this->request_concrete->getField('article_price'),
             'p24_number_1' => $this->request_concrete->getField('article_number'),
             'p24_price_1' => $this->request_concrete->getField('article_price'),
             'p24_shipping' => $this->request_concrete->getField('shipping_cost'),

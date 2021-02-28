@@ -16,6 +16,7 @@ use Devpark\Transfers24\Responses\Register as RegisterResponse;
 use Devpark\Transfers24\Services\Handlers\Transfers24 as HandlersTransfers24;
 use Devpark\Transfers24\Exceptions\RequestException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 /**
  * Class Transfers24.
@@ -200,7 +201,8 @@ class Transfers24
         HandlersTransfers24 $transfers24,
         RegisterResponse $response,
         Application $app
-    ) {
+    )
+    {
         $this->response = $response;
         $this->transfers24 = $transfers24;
         $this->app = $app;
@@ -220,7 +222,7 @@ class Transfers24
      */
     protected function filterString($string)
     {
-        return (! empty($string) && is_string($string));
+        return (!empty($string) && is_string($string));
     }
 
     /**
@@ -232,7 +234,7 @@ class Transfers24
      */
     protected function filterNumber($number)
     {
-        return (! empty($number) && is_numeric($number));
+        return (!empty($number) && is_numeric($number));
     }
 
     /**
@@ -291,8 +293,12 @@ class Transfers24
     public function setAmount($amount, $currency = Currency::PLN)
     {
         $this->currency = Currency::get($currency);
+        $amount = str_replace(",", ".", $amount);
+        if (!is_numeric($amount)) {
+            $amount = 0;
+        }
 
-        $this->amount = Amount::get($amount);
+        $this->amount = Amount::get(floatval($amount));
 
         if (empty($this->article_price)) {
             $this->article_price = $this->amount;
@@ -360,17 +366,23 @@ class Transfers24
         $article_name,
         $article_price = self::NO_PRICE_VALUE,
         $article_quantity = self::DEFAULT_ARTICLE_QUANTITY
-    ) {
+    )
+    {
         if ($this->filterString($article_name)) {
             $this->article_name = $article_name;
         }
 
-        if (! empty($article_price) && (is_string($article_price) || is_numeric($article_price))) {
+        if (!empty($article_price) && (is_string($article_price) || is_numeric($article_price))) {
+            $article_price = str_replace(",", ".", $article_price);
+            if (!is_numeric($article_price)) {
+                $article_price = 0;
+            }
+
             $this->article_price = Amount::get($article_price);
         }
 
         if ($this->filterNumber($article_quantity)) {
-            $this->article_quantity = (int) $article_quantity;
+            $this->article_quantity = (int)$article_quantity;
         }
 
         return $this;
@@ -510,7 +522,7 @@ class Transfers24
     public function setShipping($shipping_cost)
     {
         if ($this->filterNumber($shipping_cost)) {
-            $this->shipping_cost = (int) $shipping_cost;
+            $this->shipping_cost = (int)$shipping_cost;
         }
 
         return $this;
@@ -565,9 +577,10 @@ class Transfers24
         $quantity = self::DEFAULT_ARTICLE_QUANTITY,
         $number = self::NO_ARTICLE_NUMBER,
         $description = self::DEFAULT_ARTICLE_DESCRIPTION
-    ) {
+    )
+    {
         if ($this->filterString($name)
-            && ! empty($price)
+            && !empty($price)
             && (is_numeric($price) || is_string($price))
         ) {
             $this->additional_articles[] = [
@@ -590,7 +603,7 @@ class Transfers24
      */
     public function setField($label, $value)
     {
-        if (isset($value) && ! empty($value)) {
+        if (isset($value) && !empty($value)) {
             $this->fields[$label] = $value;
         }
     }
@@ -679,7 +692,7 @@ class Transfers24
      */
     protected function getUrl($url)
     {
-        if (starts_with($url, ['http://', 'https://'])) {
+        if (Str::startsWith($url, ['http://', 'https://'])) {
             return $url;
         }
 
@@ -697,7 +710,7 @@ class Transfers24
      */
     public function execute($token, $redirect = false)
     {
-        if (! is_string($token) || ! is_bool($redirect)) {
+        if (!is_string($token) || !is_bool($redirect)) {
             throw new RequestExecutionException('Empty or not valid Token');
         }
 

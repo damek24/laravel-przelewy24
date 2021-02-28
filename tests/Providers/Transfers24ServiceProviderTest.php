@@ -28,5 +28,6 @@ class Transfers24ServiceProviderTest extends UnitTestCase
         ], 'config');
 
         $transfers24_provider->register();
+        $this->assertInstanceOf(Application::class, $app);
     }
 }

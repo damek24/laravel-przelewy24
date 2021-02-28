@@ -9,7 +9,7 @@ use Mockery as m;
 
 class RegisterTest extends UnitTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

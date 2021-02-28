@@ -6,7 +6,7 @@ use Devpark\Transfers24\Country;
 
 class CountryTest extends UnitTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
     }

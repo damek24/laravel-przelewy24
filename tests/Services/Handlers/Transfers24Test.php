@@ -10,7 +10,7 @@ use Mockery as m;
 
 class Transfers24Test extends UnitTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

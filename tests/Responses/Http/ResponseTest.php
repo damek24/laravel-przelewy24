@@ -7,7 +7,7 @@ use Devpark\Transfers24\Responses\Http\Response;
 
 class ResponseTest extends UnitTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

@@ -100,8 +100,15 @@ class Transfers24
         if ($this->testMode) {
             $this->hostLive = $this->hostSandbox;
         }
+        if (isset($config['local']) && $config['local']){
+            $this->client = new Client([
+                'base_uri' => $this->getHost(),
+                'curl' => [CURLOPT_SSL_VERIFYPEER => false]
+            ]);
+        } else {
+            $this->client = new Client(['base_uri' => $this->getHost()]);
+        }
 
-        $this->client = new Client(['base_uri' => $this->getHost()]);
 
         $this->addValue('p24_merchant_id', $this->merchantId);
         $this->addValue('p24_pos_id', $this->posId);
