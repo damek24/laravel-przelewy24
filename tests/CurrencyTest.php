@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use Devpark\Transfers24\Currency;
-use Devpark\Transfers24\Exceptions\CurrencyException;
+use Damianjozwiak\Transfers24\Currency;
+use Damianjozwiak\Transfers24\Exceptions\CurrencyException;
 
 class CurrencyTest extends UnitTestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Devpark\Transfers24\Responses;
+namespace Damianjozwiak\Transfers24\Responses;
 
 /**
  * Class Verify.

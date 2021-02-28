@@ -2,7 +2,7 @@
 
 namespace Tests\Providers;
 
-use Devpark\Transfers24\Providers\Transfers24ServiceProvider;
+use Damianjozwiak\Transfers24\Providers\Transfers24ServiceProvider;
 use Illuminate\Foundation\Application;
 use Tests\UnitTestCase;
 use Mockery as m;

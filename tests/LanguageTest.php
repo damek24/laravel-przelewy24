@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Devpark\Transfers24\Language;
+use Damianjozwiak\Transfers24\Language;
 
 class LanguageTest extends UnitTestCase
 {

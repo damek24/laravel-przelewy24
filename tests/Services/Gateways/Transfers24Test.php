@@ -2,10 +2,10 @@
 
 namespace Tests\Services\Gateways;
 
-use Devpark\Transfers24\Services\Gateways\Transfers24 as GatewayTransfers24;
+use Damianjozwiak\Transfers24\Services\Gateways\Transfers24 as GatewayTransfers24;
 use Tests\UnitTestCase;
 use Mockery as m;
-use Devpark\Transfers24\Responses\Http\Response;
+use Damianjozwiak\Transfers24\Responses\Http\Response;
 use Illuminate\Config\Repository as Config;
 use GuzzleHttp\Client;
 

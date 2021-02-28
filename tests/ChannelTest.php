@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Devpark\Transfers24\Channel;
+use Damianjozwiak\Transfers24\Channel;
 
 class ChannelTest extends UnitTestCase
 {

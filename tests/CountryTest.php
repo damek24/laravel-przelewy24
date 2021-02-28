@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Devpark\Transfers24\Country;
+use Damianjozwiak\Transfers24\Country;
 
 class CountryTest extends UnitTestCase
 {

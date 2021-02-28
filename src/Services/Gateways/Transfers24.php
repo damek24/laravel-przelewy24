@@ -1,9 +1,9 @@
 <?php
 
-namespace Devpark\Transfers24\Services\Gateways;
+namespace Damianjozwiak\Transfers24\Services\Gateways;
 
 use GuzzleHttp\Client;
-use Devpark\Transfers24\Responses\Http\Response;
+use Damianjozwiak\Transfers24\Responses\Http\Response;
 use Illuminate\Config\Repository as Config;
 
 /**

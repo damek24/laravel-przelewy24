@@ -7,30 +7,23 @@ This module makes integration with [przelewy24.pl](http://przelewy24.pl) payment
 1. Run
 
    ```php   
-   composer require devpark/laravel-przelewy24
+   composer require damianjozwiak/laravel-przelewy24
    ``` 
    
    in console to install this module
    
-2. Open `config/app.php` and add
-
-   ###### Laravel 5.5+ uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider. You can go to 3.
-    
-   ```php
-   Devpark\Transfers24\Providers\Transfers24ServiceProvider::class,
-   ```
         
    in section `providers`
           
-3. Run
+2. Run
 
     ```php
-    php artisan vendor:publish --provider="Devpark\Transfers24\Providers\Transfers24ServiceProvider"
+    php artisan vendor:publish --provider="Damianjozwiak\Transfers24\Providers\Transfers24ServiceProvider"
     ```
     
     in your console to publish default configuration files
         
-4. Open `.env` and add your configuration:
+3. Open `.env` and add your configuration:
 
  * `PRZELEWY24_MERCHANT_ID` -a Company or an Individual number, who has signed a contract with Przelewy24 (Merchant ID), 
  * `PRZELEWY24_POS_ID` - the identification number of the shop (default: Merchant ID)
@@ -57,7 +50,7 @@ The most basic sample code for authorization request could look like this:
 
 ```php      
 $payment = app()->make(\App\Payment::class);
-$registration_request = app()->make(\Devpark\Transfers24\Requests\Transfers24::class);
+$registration_request = app()->make(\Damianjozwiak\Transfers24\Requests\Transfers24::class);
 
 $register_payment = $registration_request->setEmail('test@example.com')->setAmount(100)->setArticle('Article Name')->init();
 
@@ -83,7 +76,7 @@ This code should be run in controller as it's returning response which will take
 
 For `setAmount` default currency is PLN. If you want to use other currency, you should use currency constant from `\Devpark\Transfers24\Currency` class as 2nd parameter. Also please notice that amount you should give to this function is real amount (with decimal places) and not converted already to Przelewy24 format.
   
-For `\Devpark\Transfers24\Requests\Transfers24::execute` method 2nd parameter decides of redirection to payment system when true or return url for making payment when false
+For `\Damianjozwiak\Transfers24\Requests\Transfers24::execute` method 2nd parameter decides of redirection to payment system when true or return url for making payment when false
 
 #### Define customer returning routes
 
@@ -91,10 +84,10 @@ You should create routes that will redirect customer after the completed transac
 
 #### Handling transaction verify route
 
-To make sure the payment was really successful you should use `\Devpark\Transfers24\Requests\Transfers24::receive` method. The simplest code could look like this:
+To make sure the payment was really successful you should use `\Damianjozwiak\Transfers24\Requests\Transfers24::receive` method. The simplest code could look like this:
 
 ```php
-$payment_verify = app()->make(\Devpark\Transfers24\Requests\Transfers24::class);
+$payment_verify = app()->make(\Damianjozwiak\Transfers24\Requests\Transfers24::class);
 $payment_response = $payment_verify->receive($request);
 
 if ($payment_response->isSuccess()) {

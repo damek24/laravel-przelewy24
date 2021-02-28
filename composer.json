@@ -10,7 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Devpark\\Transfers24\\": "src/"
+            "Damianjozwiak\\Transfers24\\": "src/"
         }
     },
     "autoload-dev": {
@@ -28,7 +28,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Devpark\\Transfers24\\Providers\\Transfers24ServiceProvider"
+                "Damianjozwiak\\Transfers24\\Providers\\Transfers24ServiceProvider"
             ]
         }
     }

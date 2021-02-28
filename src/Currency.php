@@ -1,8 +1,8 @@
 <?php
 
-namespace Devpark\Transfers24;
+namespace Damianjozwiak\Transfers24;
 
-use Devpark\Transfers24\Exceptions\CurrencyException;
+use Damianjozwiak\Transfers24\Exceptions\CurrencyException;
 
 /**
  * Class Currency  ISO 4217.

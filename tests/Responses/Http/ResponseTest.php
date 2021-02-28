@@ -3,7 +3,7 @@
 namespace Tests\Responses\Http;
 
 use Tests\UnitTestCase;
-use Devpark\Transfers24\Responses\Http\Response;
+use Damianjozwiak\Transfers24\Responses\Http\Response;
 
 class ResponseTest extends UnitTestCase
 {

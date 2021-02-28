@@ -3,7 +3,7 @@
 namespace Tests\Services;
 
 use Tests\UnitTestCase;
-use Devpark\Transfers24\Services\Amount;
+use Damianjozwiak\Transfers24\Services\Amount;
 
 class AmountTest extends UnitTestCase
 {

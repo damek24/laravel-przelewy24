@@ -1,6 +1,6 @@
 <?php
 
-namespace Devpark\Transfers24\Providers;
+namespace Damianjozwiak\Transfers24\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

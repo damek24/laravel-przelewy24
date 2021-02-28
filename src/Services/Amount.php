@@ -1,6 +1,6 @@
 <?php
 
-namespace Devpark\Transfers24\Services;
+namespace Damianjozwiak\Transfers24\Services;
 
 /**
  * Class Amount.

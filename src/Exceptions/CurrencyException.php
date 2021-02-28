@@ -1,6 +1,6 @@
 <?php
 
-namespace Devpark\Transfers24\Exceptions;
+namespace Damianjozwiak\Transfers24\Exceptions;
 
 /**
  * Class CurrencyException.

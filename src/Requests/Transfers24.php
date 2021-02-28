@@ -1,20 +1,20 @@
 <?php
 
-namespace Devpark\Transfers24\Requests;
+namespace Damianjozwiak\Transfers24\Requests;
 
-use Devpark\Transfers24\Exceptions\RequestExecutionException;
-use Devpark\Transfers24\Responses\Verify;
+use Damianjozwiak\Transfers24\Exceptions\RequestExecutionException;
+use Damianjozwiak\Transfers24\Responses\Verify;
 use Illuminate\Config\Repository as Config;
 use Illuminate\Routing\UrlGenerator as Url;
 use Illuminate\Foundation\Application;
-use Devpark\Transfers24\Language;
-use Devpark\Transfers24\Country;
-use Devpark\Transfers24\Currency;
-use Devpark\Transfers24\Channel;
-use Devpark\Transfers24\Services\Amount;
-use Devpark\Transfers24\Responses\Register as RegisterResponse;
-use Devpark\Transfers24\Services\Handlers\Transfers24 as HandlersTransfers24;
-use Devpark\Transfers24\Exceptions\RequestException;
+use Damianjozwiak\Transfers24\Language;
+use Damianjozwiak\Transfers24\Country;
+use Damianjozwiak\Transfers24\Currency;
+use Damianjozwiak\Transfers24\Channel;
+use Damianjozwiak\Transfers24\Services\Amount;
+use Damianjozwiak\Transfers24\Responses\Register as RegisterResponse;
+use Damianjozwiak\Transfers24\Services\Handlers\Transfers24 as HandlersTransfers24;
+use Damianjozwiak\Transfers24\Exceptions\RequestException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 

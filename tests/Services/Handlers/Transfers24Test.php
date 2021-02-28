@@ -2,9 +2,9 @@
 
 namespace Tests\Services\Handlers;
 
-use Devpark\Transfers24\Services\Handlers\Transfers24 as HandlerTransfers24;
-use Devpark\Transfers24\Services\Gateways\Transfers24 as GatewayTransfers24;
-use Devpark\Transfers24\Responses\Http\Response as HttpResponse;
+use Damianjozwiak\Transfers24\Services\Handlers\Transfers24 as HandlerTransfers24;
+use Damianjozwiak\Transfers24\Services\Gateways\Transfers24 as GatewayTransfers24;
+use Damianjozwiak\Transfers24\Responses\Http\Response as HttpResponse;
 use Tests\UnitTestCase;
 use Mockery as m;
 

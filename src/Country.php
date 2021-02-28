@@ -1,6 +1,6 @@
 <?php
 
-namespace Devpark\Transfers24;
+namespace Damianjozwiak\Transfers24;
 
 /**
  * Class Country ISO 3166.

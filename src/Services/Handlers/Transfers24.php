@@ -1,12 +1,12 @@
 <?php
 
-namespace Devpark\Transfers24\Services\Handlers;
+namespace Damianjozwiak\Transfers24\Services\Handlers;
 
-use Devpark\Transfers24\Services\Gateways\Transfers24 as GatewayTransfers24;
-use Devpark\Transfers24\Responses\Register as ResponseRegister;
-use Devpark\Transfers24\Responses\Verify as ResponseVerify;
-use Devpark\Transfers24\Responses\Http\Response as HttpResponse;
-use Devpark\Transfers24\ErrorCode;
+use Damianjozwiak\Transfers24\Services\Gateways\Transfers24 as GatewayTransfers24;
+use Damianjozwiak\Transfers24\Responses\Register as ResponseRegister;
+use Damianjozwiak\Transfers24\Responses\Verify as ResponseVerify;
+use Damianjozwiak\Transfers24\Responses\Http\Response as HttpResponse;
+use Damianjozwiak\Transfers24\ErrorCode;
 
 /**
  * Class Transfers24.

@@ -3,7 +3,7 @@
 namespace Tests\Services;
 
 use Tests\UnitTestCase;
-use Devpark\Transfers24\CodeTranslate;
+use Damianjozwiak\Transfers24\CodeTranslate;
 
 class CodeTranslateTest extends UnitTestCase
 {

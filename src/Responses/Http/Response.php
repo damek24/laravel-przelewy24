@@ -1,6 +1,6 @@
 <?php
 
-namespace Devpark\Transfers24\Responses\Http;
+namespace Damianjozwiak\Transfers24\Responses\Http;
 
 /**
  * Class Response.

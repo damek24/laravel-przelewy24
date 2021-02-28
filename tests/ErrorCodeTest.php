@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Devpark\Transfers24\ErrorCode;
+use Damianjozwiak\Transfers24\ErrorCode;
 
 class ErrorCodeTest extends UnitTestCase
 {

@@ -3,8 +3,8 @@
 namespace Tests\Responses;
 
 use Tests\UnitTestCase;
-use Devpark\Transfers24\Responses\Verify as ResponseVerify;
-use Devpark\Transfers24\Services\Handlers\Transfers24 as HandlerTransfers24;
+use Damianjozwiak\Transfers24\Responses\Verify as ResponseVerify;
+use Damianjozwiak\Transfers24\Services\Handlers\Transfers24 as HandlerTransfers24;
 use Mockery as m;
 
 class VerifyTest extends UnitTestCase

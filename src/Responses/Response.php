@@ -1,8 +1,8 @@
 <?php
 
-namespace Devpark\Transfers24\Responses;
+namespace Damianjozwiak\Transfers24\Responses;
 
-use Devpark\Transfers24\Services\Handlers\Transfers24 as HandlerTransfers24;
+use Damianjozwiak\Transfers24\Services\Handlers\Transfers24 as HandlerTransfers24;
 
 /**
  * Class Response.

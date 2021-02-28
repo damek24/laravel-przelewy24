@@ -3,8 +3,8 @@
 namespace Tests\Responses;
 
 use Tests\UnitTestCase;
-use Devpark\Transfers24\Responses\Response;
-use Devpark\Transfers24\Services\Handlers\Transfers24 as HandlerTransfers24;
+use Damianjozwiak\Transfers24\Responses\Response;
+use Damianjozwiak\Transfers24\Services\Handlers\Transfers24 as HandlerTransfers24;
 use Mockery as m;
 
 class ResponseTest extends UnitTestCase
